@@ -22,6 +22,6 @@ def ChangeExif(directory):
             exif_bytes = piexif.dump(metaDataDict)
             if not os.path.exists(directory + '/AdjustedExif/'):
                 os.makedirs(directory + '/AdjustedExif/')
-            image.save(directory + '/AdjustedExif/' + file, "jpeg", exif=exif_bytes)
+            image.save(directory + '/AdjustedExif/' + file, "jpeg", exif=exif_bytes, quality=100)
             
 ChangeExif(sys.argv[1])
